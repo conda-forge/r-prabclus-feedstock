@@ -1,5 +1,4 @@
 {% set version = '2.2-6' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,24 +9,25 @@ package:
 source:
   fn: prabclus_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/prabclus_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/prabclus/prabclus_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/prabclus_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/prabclus/prabclus_{{ version }}.tar.gz
   sha256: 41792980e40ba18204fab92d85120dcd468860e2204e52fb42636c6f7aee5a62
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-mass
     - r-mclust
-
   run:
     - r-base
     - r-mass
@@ -35,7 +35,7 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('prabclus')"  # [not win]
+    - $R -e "library('prabclus')"           # [not win]
     - "\"%R%\" -e \"library('prabclus')\""  # [win]
 
 about:
@@ -45,7 +45,6 @@ about:
     information. Some distance measures,  Clustering of presence-absence, abundance
     and multilocus genetical data  for species delimitation, nearest neighbor  based
     noise detection. Try package?prabclus for on overview. '
-
   license_family: GPL
 
 extra:
@@ -54,3 +53,5 @@ extra:
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
