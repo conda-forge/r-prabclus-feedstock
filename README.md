@@ -1,11 +1,11 @@
-About r-prabclus
-================
+About r-prabclus-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-prabclus-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.unibo.it/sitoweb/christian.hennig/en/
 
 Package license: GPL
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-prabclus-feedstock/blob/main/LICENSE.txt)
 
 Summary: Distance-based parametric bootstrap tests for clustering with  spatial neighborhood information. Some distance measures,  Clustering of presence-absence, abundance and multilocus genetical data  for species delimitation, nearest neighbor  based noise detection. Genetic distances between communities. Tests whether various distance-based regressions are equal. Try package?prabclus for on overview. 
 
