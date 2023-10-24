@@ -1,4 +1,4 @@
-{% set version = "2.3-2" %}
+{% set version = "2.3-3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/prabclus_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/prabclus/prabclus_{{ version }}.tar.gz
-  sha256: f421bcbcb557281e0de4a06b15f9a496adb5c640e883c0f7bb12051efc69e441
+  sha256: 005d000a9ac357e670de26e5b8fc4ddb1617351275fa43bf6d2e88b8774358c1
 
 build:
-  merge_build_host: True  # [win]
-  number: 3
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -40,11 +40,8 @@ test:
 about:
   home: https://www.unibo.it/sitoweb/christian.hennig/en/
   license: GPL
-  summary: 'Distance-based parametric bootstrap tests for clustering with  spatial neighborhood
-    information. Some distance measures,  Clustering of presence-absence, abundance
-    and multilocus genetical data  for species delimitation, nearest neighbor  based
-    noise detection. Genetic distances between communities. Tests whether various distance-based
-    regressions are equal. Try package?prabclus for on overview. '
+  summary: 'Distance-based parametric bootstrap tests for clustering with  spatial neighborhood information. Some distance measures,  Clustering of presence-absence, abundance and multilocus genetical data  for species delimitation, nearest neighbor  based noise detection. Genetic distances between communities. Tests whether
+    various distance-based regressions are equal. Try package?prabclus for on overview. '
   license_family: GPL
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
