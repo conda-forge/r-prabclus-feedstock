@@ -1,4 +1,4 @@
-{% set version = "2.3-4" %}
+{% set version = "2.3-5" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/prabclus_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/prabclus/prabclus_{{ version }}.tar.gz
-  sha256: cd7623572648a43d22321b8537f8659f1db3d06ed48c3d50079828f023e0ac72
+  sha256: ead9132babe7551a7c480c19e0ebead10a6320baeef3b0e10ed66e3cbbd64e8b
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
